@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>已复制【76jifen1@gmail.com】</title>
+    <title>Copy Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Sao chép nội dung
+        // Hàm sao chép nội dung
+        function copyToClipboard() {
             const textToCopy = "76jifen1@gmail.com";
             navigator.clipboard.writeText(textToCopy).then(() => {
                 alert(`已复制: ${textToCopy}`);
+            }).catch(err => {
+                alert(`复制失败: ${err}`);
+            });
+        }
+
+        // Tự động sao chép khi trang tải
+        document.addEventListener("DOMContentLoaded", function () {
+            const textToCopy = "76jifen1@gmail.com";
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert(`已自动复制: ${textToCopy}`);
+            }).catch(err => {
+                alert("自动复制失败，请点击下方链接复制。");
             });
         });
     </script>
 </head>
-<body style="text-align: center; font-family: Arial, sans-serif;">
+<body>
     <h3>邮箱地址已复制</h3>
+    <p>如果没有自动复制，请点击 <a id="copyLink" onclick="copyToClipboard()">76jifen1@gmail.com</a> 手动复制。</p>
 </body>
 </html>
