@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>发送邮件</title>
     <style>
+        /* 邮件链接的样式 */
+        .email-link {
+            font-size: 30px; /* 字体大小 */
+            color: blue;    /* 文字颜色 */
+            font-weight: bold; /* 加粗 */
+        
+        }
+
+        .email-link:hover {
+            color: red; /* 鼠标悬停时的颜色 */
+            text-decoration: underline; /* 鼠标悬停时添加下划线 */
+        }
+
+        /* 备注信息的样式 */
         .note {
             color: red;
             margin-top: 10px;
         }
+
         .copy-link {
             color: blue;
             font-weight: bold;
@@ -19,12 +34,15 @@
 </head>
 <body>
     <h2>点击发送邮件</h2>
+
     <!-- 邮件链接 -->
-    <a href="mailto:76jifen1@gmail.com?subject=我的ID账户是：32**56&body=我要兑换小额换彩50积分">点击跳转QQ邮箱APP</a>
+    <a class="email-link" href="mailto:76jifen1@gmail.com?subject=我的ID账户是：32**56&body=我要兑换小额换彩50积分">
+        点击跳转QQ邮箱APP
+    </a>
     
     <!-- 备注信息 -->
     <p class="note">
-        如果不能自动跳转QQ邮箱，需要复制76jifen1@gmail.com可以点击
+        如果不能自动跳转QQ邮箱，需要复制【76jifen1@gmail.com】可以点击
         <span class="copy-link" onclick="copyToClipboard()">这里</span>。
     </p>
 
