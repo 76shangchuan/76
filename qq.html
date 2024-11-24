@@ -20,21 +20,24 @@
 <body>
     <h2>点击发送邮件</h2>
     <!-- 邮件链接 -->
-    <a href="mailto:76jifen1@gmail.com?subject=%E6%88%91%E7%9A%84ID%E8%B4%A6%E6%88%B7%E6%98%AF%EF%BC%9A32**56&body=%E6%88%91%E8%A6%81%E5%85%91%E6%8D%A2%E5%B0%8F%E9%A2%9D%E6%8D%A2%E5%BD%A950%E7%A7%AF%E5%88%86">点击这里发送邮件</a>
+    <a href="mailto:76jifen1@gmail.com?subject=%E6%88%91%E7%9A%84ID%E8%B4%A6%E6%88%B7%E6%98%AF%EF%BC%9A32**56&body=%0A%0A%E6%88%91%E8%A6%81%E5%85%91%E6%8D%A2%E5%B0%8F%E9%A2%9D%E6%8D%A2%E5%BD%A950%E7%A7%AF%E5%88%86">
+        点击这里发送邮件
+    </a>
     
-    <!-- 备注信息 -->
     <p class="note">
-        如果不能自动跳转QQ邮箱11，需要复制76jifen1@gmail.com，可以点击
-        <span class="copy-link" onclick="copyToClipboard()">这里</span>。
+        如果正文未填写，请复制以下内容：
     </p>
-
+    <p>
+        <span class="copy-link" onclick="copyToClipboard()">【点击这里复制正文】</span>
+    </p>
+    
     <script>
         function copyToClipboard() {
-            const email = "76jifen1@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
-                alert(`已复制邮箱地址: ${email}`);
+            const bodyText = "我要兑换小额换彩50积分";
+            navigator.clipboard.writeText(bodyText).then(() => {
+                alert("已复制正文内容，请粘贴到邮件中");
             }).catch(err => {
-                alert(`复制失败: ${err}`);
+                alert("复制失败: " + err);
             });
         }
     </script>
