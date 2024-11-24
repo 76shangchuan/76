@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发送邮件</title>
+    <style>
+        .note {
+            color: red;
+            margin-top: 10px;
+        }
+        .copy-link {
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>点击发送邮件</h2>
+    <!-- 邮件链接 -->
+    <a href="mailto:76jifen1@gmail.com?subject=我的ID账户是：32**56&body=我要兑换小额换彩50积分">点击这里发送邮件</a>
+    
+    <!-- 备注信息 -->
+    <p class="note">
+        如果不能自动跳转QQ邮箱，需要复制76jifen1@gmail.com可以点击
+        <span class="copy-link" onclick="copyToClipboard()">这里</span>。
+    </p>
+
+    <script>
+        function copyToClipboard() {
+            const email = "76jifen1@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                alert(`已复制邮箱地址: ${email}`);
+            }).catch(err => {
+                alert(`复制失败: ${err}`);
+            });
+        }
+    </script>
+</body>
+</html>
